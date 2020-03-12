@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+    <script src="https://js.tappaysdk.com/tpdirect/v4"></script>
+    <script>
+        TPDirect.setupSDK(12348, "app_pa1pQcKoY22IlnSXq5m5WP5jFKzoRG58VEXpT7wU62ud7mMbDOGzCYIlzzLF", "sandbox")
+    </script>
+<body>
+    <style>
+        .tpfield {
+            height: 40px;
+            width: 300px;
+            border: 1px solid gray;
+            margin: 5px 0;
+            padding: 5px;
+        }
+    </style>
+    <div class="tpfield" id="card-number"></div>
+    <div class="tpfield" id="card-expiration-date"></div>
+    <div class="tpfield" id="card-ccv"></div>
+    <input type="button", id="get_prime" value="利用信用卡付費">
+    <p id="tappay_response"></p>
+    <script src="../javascripts/checkout/tappaySetting.js"></script>
+</body>
+
+</html>

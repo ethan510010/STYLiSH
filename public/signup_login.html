@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="home.css">
+</head>
+<script>
+  // 載入fb sdk
+(function (d, s, id) {
+  let js; const
+    fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) { return; }
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/zh_TW/sdk.js';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+// 初始化
+window.fbAsyncInit = function () {
+  FB.init({
+    appId: '824057248044383',
+    cookie: true,
+    xfbml: true,
+    version: 'v3.1',
+  });
+
+  FB.AppEvents.logPageView();
+};
+</script>
+<body>
+  <div class="header">
+      <div class="left-content">
+          <a href="/">
+            <img src="./htmlImgs/btn-logo-01.svg" alt="">
+          </a>
+          <ul class="left_nav">
+              <li><a href="">女裝</a></li>
+              <li><a href="">|</a></li>
+              <li><a href="">男裝</a></li>
+              <li><a href="">|</a></li>
+              <li><a href="">配件</a></li>
+          </ul>
+      </div>
+      <div class="right-content">
+          <div class="search">
+              <input type="text" class="searchTerm">
+              <img class="searchBtn" src="./htmlImgs/search.png" alt="">
+          </div>
+          <input class="shopping_cart" type="image" src="./htmlImgs/btn-shopping-cart-01-add.svg">
+          <input class="user_profile" type="image" src="./htmlImgs/btn-member-01-normal.svg">
+      </div>
+  </div>
+  <div class="decoration_bar"></div>
+  <div class="signup_login_content">
+    <div class="FB_login">
+      <h2>facebook登入</h2>
+      <input id="facebook_login" type="button", value="Facebook登入">
+    </div>
+    <div class="general_login">
+      <h2>一般登入</h2>
+      信箱: <input type="text" class="user_email">
+      <br>
+      <br>
+      密碼: <input type="password" class="user_password">
+      <br>
+      <br>
+      <input type="button" class="normal_login" value="一般登入">
+    </div>
+    <div class="user_signup">
+      <h2>用戶註冊</h2>
+      用戶名稱: <input type="text" class="signup_name">
+      <br>
+      <br>
+      用戶信箱: <input type="text" class="signup_email">
+      <br>
+      <br>
+      用戶密碼: <input type="password" class="signup_password">
+      <br>
+      <br>
+      <input type="button" class="sign_up" value="註冊">
+    </div>
+  </div>
+  <div class="footer">
+      <div class="left_footer_part">
+          <ul>
+              <li><a href="">關於 Stylish</a></li>
+              <li><a href="">|</a></li>
+              <li><a href="">服務條款</a></li>
+              <li><a href="">|</a></li>
+              <li><a href="">隱私政策</a></li>
+              <li><a href="">|</a></li>
+              <li><a href="">聯絡我們</a></li>
+              <li><a href="">|</a></li>
+              <li><a href="">FAQ</a></li>
+          </ul>
+      </div>
+      <div class="right_footer_part">
+          <input class="line" type="image" src="./htmlImgs/line.png">
+          <input class="twitter" type="image" src="./htmlImgs/twitter.png">
+          <input class="facebook" type="image" src="./htmlImgs/facebook.png">
+          <p>&copy 2018. All rights reserved.</p>
+      </div>
+  </div>
+  <!-- 插入 user登入、註冊的 js 相關檔案 -->
+  <script src="./user/signup_login.js"></script>
+</body>
+</html>

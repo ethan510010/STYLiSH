@@ -1,0 +1,16 @@
+<html>
+    <body>
+        <h1><%= title %></h1>
+        <%- test %>
+        <p><%= description %></p>
+        <% if(show) { %>
+            <span>資料有呈現</span>
+        <% } %>
+
+        <ul>
+            <% for(let i = 0; i < course.length; i++) { %> 
+                <li> <%- course[i] %></li>
+            <% } %>
+        </ul>
+    </body>
+</html>

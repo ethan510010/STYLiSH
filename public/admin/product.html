@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- <div class="hot-container">
+        <form action="/admin/upload_activity", method="POST">
+            <h1>填寫熱銷活動資訊</h1>
+            熱銷活動標題: <input class="hot_activity" type="text", name="hot_activity_title" placeholder="輸入熱銷活動標題">
+            <br>
+            <br>
+            <input type="submit"" value="熱銷活動資料上傳">
+        </form>
+    </div> -->
+    <div class="product-container">
+        <form action="/admin/upload_product_info", method="POST", enctype="multipart/form-data">
+            <h1>輸入商品資訊</h1>    
+            商品名稱: <input class="product_title" name="product_title" type="text" placeholder="輸入商品名稱">
+            <br>
+            <br>
+            商品描述: <input class="product_description" name="product_description" type="text" placeholder="輸入商品描述">
+            <br>
+            <br>
+            商品價格: <input class="product_price" name="product_price" type="number" placeholder="輸入商品價格">
+            <br>
+            <br>
+            商品材質: <input class="product_texture" name="product_texture" type="text" placeholder="輸入商品材質">
+            <br>
+            <br>
+            洗滌方式: <input class="product_wash" name="product_wash" type="text" placeholder="輸入商品洗滌方式">
+            <br>
+            <br>
+            製造地: <input class="product_place" name="product_place" type="text" placeholder="輸入商品製造地">
+            <br>
+            <br>
+            備註: <input class="product_note" name="product_note" type="text" placeholder="輸入商品備註">
+            <br>
+            <br>
+            廣告文案: <input class="product_story" name="product_story" type="text" placeholder="輸入商品廣告文案">
+            <br>
+            <br>
+            <!-- 商品尺寸: <input class="product_size" name="product_size" type="text" placeholder="text" placeholder="輸入商品尺寸"> 
+            <span>(ex: S,L,XL)</span> 
+            <br>
+            <br> -->
+            上傳主要商品圖片: <input type="file" name="product_main_image" accept="image/*">
+            <br>
+            <br>
+            上傳其他商品圖片1: <input type="file" name="product_sub_images" accept="image/*">
+            <br>
+            <br>
+            上傳其他商品圖片2: <input type="file" name="product_sub_images" accept="image/*">
+            <br>
+            <br>
+            上傳其他商品圖片3: <input type="file" name="product_sub_images" accept="image/*">
+            <br>
+            <br>
+            <!-- 選擇熱銷分類編號: <input type="number", name="hot_id", placeholder="選擇熱銷分類編號"> 
+            <button type="button" class="search_hot_id">查看熱銷活動編號</button>
+            <div id="search_hot_activity"></div>
+            <br>
+            <br> -->
+            搜尋關鍵字: <input type="text" name="product_keyword", placeholder="輸入搜尋關鍵字">
+            <br>
+            <br>
+            分類: <select name="product_category">
+                <option value="men">男裝</option>
+                <option value="women">女裝</option>
+                <option value="accessory">配件</option>
+            </select>
+            <br>
+            <br>
+            <input type="submit" value="商品資料上傳">
+        </form>
+    </div>
+    <!-- <div class="color-container">
+            <form action="/admin/upload_color", method="POST">
+                <h1>編輯顏色</h1>
+                商品編號: <input name="product_id" class="color_product_id" type="number" placeholder="輸入對應商品編號">
+                <button type="button" class="search_product_id_by_color">查看商品編號</button>
+                <div id="search_product_by_color"></div>
+                <br>
+                <br>
+                顏色色碼: <input name="color_hex_str" class="color_hex" type="text" placeholder="輸入顏色色碼">
+                <br>
+                <br>
+                顏色名稱: <input name="color_chinese_name" class="color_name" type="text" placeholder="輸入顏色名稱">
+                <br>
+                <br>
+                <input type="submit" value="顏色資料上傳">
+            </form>
+    </div> -->
+    <div class="regular-container">
+            <form action="/admin/upload_variant", method="POST">
+                <h1>填寫規格</h1>
+                商品編號: <input name="product_id" class="regular_product_id" type="number"" placeholder="輸入對應商品編號">
+                <button type="button" class="search_product_id_by_variant">查看商品編號</button>
+                <div id="search_product_by_variant"></div>
+                <br>
+                <br>
+                填寫色碼: <input name="regular_color_code" class="regular_color_hex" type="text" placeholder="輸入顏色色碼">
+                <br>
+                <br>
+                填寫顏色名稱: <input name="regular_color_name" class="regular_color_name" type="text" placeholder="輸入顏色名稱">
+                <br>
+                <br>
+                尺寸: <input name="regular_size" class="regular_size" type="text" placeholder="輸入尺寸">
+                <br>
+                <br>
+                庫存: <input name="regular_stock" class="regular_stock" type="number" placeholder="輸入庫存數量">
+                <br>
+                <br>
+                <input type="submit" value="規格資料上傳">
+            </form>
+    </div>
+    <script src="../javascripts/script.js"></script>
+</body>
+</html>

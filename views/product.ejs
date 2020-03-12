@@ -1,0 +1,101 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="/product/style.css">
+</head>
+    <script src="https://js.tappaysdk.com/tpdirect/v4"></script>
+    <script>
+        TPDirect.setupSDK(12348, "app_pa1pQcKoY22IlnSXq5m5WP5jFKzoRG58VEXpT7wU62ud7mMbDOGzCYIlzzLF", "sandbox")
+    </script>
+<body>
+    <%- include('./includes/header'); -%>
+    <%- include('./includes/decorationBar'); -%>
+    <div class="product_detail_content">
+        <div class="upper_part">
+            <img class="left_image_part" src=<%= main_image%> alt="">
+            <div class="right_info_part">
+                <p class="title"><%= title %></p>
+                <p class="product_id"><%= prodId %></p>
+                <p class="product_price"><%= prodPrice %></p>
+                <div class="seperation_bar"></div>
+                <div class="purchase_choice">
+                    <div class="color_opinions">
+                        <span class="each_row_title">顏色</span>
+                        <span class="vertical_decoration">|</span>
+                        <% for (let i = 0; i < colors.length; i++) { %>
+                            <div style="width: 24px; height: 24px; margin-left: 21px; background-color: <%- colors[i] %>"></div>
+                        <% }
+                        %>
+                    </div>
+                    <div class="size_opinions">
+                        <span class="each_row_title">尺寸</span>
+                        <span class="vertical_decoration">|</span>
+                        <% for (let i = 0; i < sizes.length; i++) { %>
+                            <div class="size_item"><%- sizes[i] %></div>
+                        <% }
+                        %>
+                    </div>
+                    <div class="number_opinions">
+                        <span class="each_row_title">數量</span>
+                        <span class="vertical_decoration">|</span>
+                        <div class="amount_area">
+                            <button>-</button>
+                            <input type="text", placeholder=0>
+                            <button>+</button>
+                        </div>
+                    </div>
+                    <div class="add_cart">
+                        加入購物車
+                    </div>
+                    <div class="checkout_area">
+                        <style>
+                            .tpfield {
+                                height: 40px;
+                                width: 300px;
+                                border: 1px solid gray;
+                                margin: 5px 0;
+                                padding: 5px;
+                            }
+                        </style>
+                        <div class="tpfield" id="card-number"></div>
+                        <div class="tpfield" id="card-expiration-date"></div>
+                        <div class="tpfield" id="card-ccv"></div>
+                        <input type="button", id="pay" value="Pay"">
+                    </div>
+                    <div class="description_area">
+                        <p><%= desc %></p>
+                        <div class="material">
+                            <p><%= material %></p>
+                            <p>厚薄:薄</p>
+                            <p>彈性:無</p>
+                        </div>
+                        <div class="national">
+                            <p>素材產地/<%= nation %></p>
+                            <p>加工產地/<%= nation %></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="decoration_part">
+            <div class="title">細部說明</div>
+            <div class="little_line"></div>
+        </div>
+        <div class="middle_part">
+            <p><%= story %></p>
+            <img src=<%= first_image %> alt="">
+        </div>
+        <div class="lower_part">
+            <p><%= story %></p>
+            <img src=<%= second_image %> alt="">
+        </div>
+    </div>
+    <%- include('./includes/footer.ejs'); -%>
+    <script src="/javascripts/checkout/productDetailCheckout.js"></script>
+</body>
+</html>
