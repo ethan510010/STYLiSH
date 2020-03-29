@@ -61,6 +61,7 @@ CREATE TABLE `color` (
 
 LOCK TABLES `color` WRITE;
 /*!40000 ALTER TABLE `color` DISABLE KEYS */;
+INSERT INTO `color` VALUES (1,'黑色','000000');
 /*!40000 ALTER TABLE `color` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -80,7 +81,7 @@ CREATE TABLE `fb_user_info` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   CONSTRAINT `fb_user_info_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -129,7 +130,7 @@ CREATE TABLE `image` (
   PRIMARY KEY (`id`),
   KEY `product_id` (`product_id`),
   CONSTRAINT `image_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -138,6 +139,7 @@ CREATE TABLE `image` (
 
 LOCK TABLES `image` WRITE;
 /*!40000 ALTER TABLE `image` DISABLE KEYS */;
+INSERT INTO `image` VALUES (17,'https://practicestylish.s3.us-east-2.amazonaws.com/1577951466166_0.jpg',10),(18,'https://practicestylish.s3.us-east-2.amazonaws.com/1577951466191_1.jpg',10),(21,'https://img.practicestylish.com/1583994022684_0.jpg',12),(22,'https://img.practicestylish.com/1583994022709_1.jpg',12),(23,'https://practicestylish.s3.us-east-2.amazonaws.com/1583994230303_1.jpg',13);
 /*!40000 ALTER TABLE `image` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -159,7 +161,7 @@ CREATE TABLE `native_user_info` (
   KEY `user_id` (`user_id`),
   KEY `native_user_email` (`native_user_email`,`native_user_password`),
   CONSTRAINT `native_user_info_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -190,7 +192,7 @@ CREATE TABLE `order_list_detail` (
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`),
   CONSTRAINT `order_list_detail_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `user_order` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -219,7 +221,7 @@ CREATE TABLE `payment_info` (
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`),
   CONSTRAINT `payment_info_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `user_order` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -254,7 +256,7 @@ CREATE TABLE `product` (
   PRIMARY KEY (`id`),
   KEY `keyword` (`keyword`),
   KEY `category` (`category`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -263,6 +265,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
+INSERT INTO `product` VALUES (10,'外套','冬用',2000,'棉','水洗(40度','美國','易染色','窄版西裝褲','https://practicestylish.s3.us-east-2.amazonaws.com/1577951466161_main.jpg','women','褲子'),(12,'西裝上衣','夏季西裝',1200,'棉','手洗 (40度','韓國','易染色','窄版西裝','https://practicestylish.s3.us-east-2.amazonaws.com/1583994022677_main.jpg','men',''),(13,'外套','春季上衣',600,'聚酯纖維','水洗(40度','美國','易染色','東京街頭風','https://practicestylish.s3.us-east-2.amazonaws.com/1583994230300_main.jpg','women','衣服');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -286,6 +289,7 @@ CREATE TABLE `size` (
 
 LOCK TABLES `size` WRITE;
 /*!40000 ALTER TABLE `size` DISABLE KEYS */;
+INSERT INTO `size` VALUES (1,'M');
 /*!40000 ALTER TABLE `size` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -305,7 +309,7 @@ CREATE TABLE `user` (
   PRIMARY KEY (`id`),
   KEY `access_token` (`access_token`(5)),
   KEY `hashed_fb_token` (`hashed_fb_token`(5))
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -338,7 +342,7 @@ CREATE TABLE `user_order` (
   `recipient_address` varchar(100) NOT NULL DEFAULT '',
   `recipient_time` varchar(25) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -377,6 +381,7 @@ CREATE TABLE `variant` (
 
 LOCK TABLES `variant` WRITE;
 /*!40000 ALTER TABLE `variant` DISABLE KEYS */;
+INSERT INTO `variant` VALUES (1,1,1,6,12);
 /*!40000 ALTER TABLE `variant` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -389,4 +394,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-01-02 15:02:04
+-- Dump completed on 2020-03-29 22:45:18
